@@ -48,8 +48,8 @@ public class SecurityConfiguration {
                 })
 
                 .and()
-                .addFilterAfter(new JwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-                .addFilterBefore(new JwtTokenValidation(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterAfter(new JwtTokenFilter(), BasicAuthenticationFilter.class)
+                .addFilterBefore(new JwtTokenValidation(), BasicAuthenticationFilter.class)
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
